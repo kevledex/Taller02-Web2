@@ -1,1 +1,23 @@
-<p>login works!</p>
+<div class="login-container">
+    <h2>INICIAR SESIÓN</h2>
+
+    <form class="formulario-container" [formGroup]="formularioLogin" (ngSubmit)="ingresar()">
+        <label>Usuario</label>
+        <input formControlName="usuario" type="text" required>
+        @if (formularioLogin.get('usuario')?.invalid && formularioLogin.get('usuario')?.touched) {
+            <p class="mensaje-error">El usuario es obligatorio</p>
+        }
+
+        <label>Contraseña</label>
+        <input formControlName="contrasenia" type="password" required>
+        @if (formularioLogin.get('contrasenia')?.invalid && formularioLogin.get('contrasenia')?.touched) {
+            <p class="mensaje-error">La contraseña es obligatoria</p>
+        }
+
+        @if (errorLogin()) {
+            <p class="mensaje-error">Usuario o contraseña incorrectas</p>
+        }
+
+        <button type="submit">Ingresar</button>
+    </form>
+</div>

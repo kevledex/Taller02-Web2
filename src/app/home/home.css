@@ -1,0 +1,193 @@
+.hero {
+    position: relative;
+    height: 70vh;
+    min-height: 420px;
+    overflow: hidden;
+}
+.hero-img-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+.hero-overlay {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+    background-color: rgba(0, 0, 0, 0.45);
+}
+.hero-content {
+    max-width: 640px;
+}
+.hero-tag {
+    display: inline-block;
+    padding: 0.35rem 1rem;
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.75rem;
+    border-radius: 999px;
+    margin-bottom: 1.3rem;
+}
+.hero-content h1 {
+    color: #ffffff;
+    font-size: 2.6rem;
+    margin-bottom: 1rem;
+}
+.hero-content p {
+    color: #e5e5e5;
+    font-size: 1.05rem;
+    margin-bottom: 1.8rem;
+    line-height: 1.5;
+}
+.btn-primary {
+    display: inline-block;
+    padding: 0.85rem 2rem;
+    background-color: #ffffff;
+    color: #1a1a1a;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+    font-size: 1rem;
+    border-radius: 0;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+.btn-primary:hover {
+    background-color: #000000;
+    color: #ffffff;
+}
+.btn-oscuro {
+    background-color: #1a1a1a;
+    color: #ffffff;
+}
+.btn-oscuro:hover {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.beneficios-container {
+    max-width: 1500px;
+    margin: 3rem auto 0;
+    padding: 0 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+}
+.beneficio-card {
+    padding: 3.2rem 1.5rem;
+    text-align: center;
+}
+.beneficio-card p {
+    color: #1a1a1a;
+    font-weight: bold;
+    font-size: 1.4rem;
+}
+.beneficio-amarillo {
+    background-color: #e6f558;
+}
+.beneficio-celeste {
+    background-color: #5cdcf2;
+}
+.beneficio-verde {
+    background-color: #6df5a3;
+}
+.beneficio-rosa {
+    background-color: #f57fd0;
+}
+
+.categorias-container {
+    max-width: 1500px;
+    margin: 3rem auto;
+    padding: 0 1rem;
+    text-align: center;
+}
+.categorias-container h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #1a1a1a;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+.grid-categorias {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+}
+.categoria-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 2rem 1.5rem;
+    text-decoration: none;
+}
+.categoria-img {
+    width: 100%;
+    height: 150px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+}
+.categoria-nombre {
+    color: #1a1a1a;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    font-weight: bold;
+    font-size: 0.95rem;
+    margin-bottom: 0.3rem;
+}
+.categoria-cantidad {
+    color: #666666;
+    font-size: 0.8rem;
+}
+
+.modelos-container {
+    max-width: 1500px;
+    margin: 3rem auto;
+    padding: 0 1rem;
+    text-align: center;
+}
+.modelos-container h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #1a1a1a;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+.grid-modelos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.5rem;
+}
+.modelo-img {
+    width: 100%;
+    aspect-ratio: 9 / 16;
+    object-fit: cover;
+    border: none;
+}
+.modelos-container .btn-primary {
+    display: inline-block;
+    margin-top: 2rem;
+}
+
+@media (max-width: 768px) {
+    .hero {
+        height: 55vh;
+        min-height: 320px;
+    }
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    .grid-modelos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

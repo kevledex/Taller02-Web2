@@ -1,1 +1,26 @@
-<p>header works!</p>
+<header class="header">
+    <img class="logo" src="https://i.postimg.cc/90BHGJmY/asos.png" (click)="cerrarMenu()">
+
+    <button class="boton-menu" type="button" (click)="alternarMenu()" [class.abierto]="menuAbierto()" aria-label="Abrir menú">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <nav class="navbar" [class.abierto]="menuAbierto()">
+        <ul class="nav-links">
+            <li><a routerLink="/" routerLinkActive="activo" [routerLinkActiveOptions]="{ exact: true }" (click)="cerrarMenu()">Home</a></li>
+            <li><a routerLink="/nosotros" routerLinkActive="activo" (click)="cerrarMenu()">Nosotros</a></li>
+            <li><a routerLink="/catalogo" routerLinkActive="activo" (click)="cerrarMenu()">Catálogo</a></li>
+            <li><a routerLink="/solicitud-producto" routerLinkActive="activo" (click)="cerrarMenu()">Solicitud de Producto</a></li>
+            <li><a routerLink="/admin/productos" routerLinkActive="activo" (click)="cerrarMenu()">Admin</a></li>
+        </ul>
+        <div class="acciones">
+            @if (auth.estadoLogueado()) {
+            <a routerLink="/mi-cuenta" routerLinkActive="activo" (click)="cerrarMenu()">Mi Cuenta</a>
+            } @else {
+            <a routerLink="/login" routerLinkActive="activo" (click)="cerrarMenu()">Iniciar Sesión</a>
+            }
+        </div>
+    </nav>
+</header>

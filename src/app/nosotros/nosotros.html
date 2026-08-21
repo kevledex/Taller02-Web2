@@ -1,1 +1,7 @@
-<p>nosotros works!</p>
+<section class="nosotros-container">
+    <div class="nosotros-texto">
+        <h1>{{ informacion.titulo }}.</h1>
+        <p>{{ informacion.descripcion }}</p>
+    </div>
+    <img class="nosotros-img" [src]="informacion.imagen" [alt]="informacion.alt">
+</section>

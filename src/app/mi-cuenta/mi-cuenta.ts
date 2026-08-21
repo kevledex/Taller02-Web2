@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { Router } from '@angular/router';
+import { Auth } from '../service/auth';
 
 @Component({
   selector: 'app-mi-cuenta',
@@ -8,4 +10,13 @@ import { Component } from '@angular/core';
 })
 export class MiCuenta {
 
+  private auth = inject(Auth);
+  private router = inject(Router);
+
+  usuario = this.auth.estadoLogueado();
+
+  salir() {
+    this.auth.logout();
+    this.router.navigate(['/login']);
+  }
 }

@@ -1,0 +1,112 @@
+.catalogo-container {
+    max-width: 1500px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+}
+.catalogo-container h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #1a1a1a;
+    text-align: center;
+}
+.categoria-seccion {
+    margin-bottom: 3rem;
+}
+.categoria-seccion h3 {
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #1a1a1a;
+    margin-bottom: 1.2rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid #e0e0e0;
+}
+.carrusel-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+}
+.carrusel-btn {
+    flex: 0 0 auto;
+    width: 36px;
+    height: 36px;
+    background-color: #ffffff;
+    border: 1px solid #1a1a1a;
+    color: #1a1a1a;
+    font-size: 1.2rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+.carrusel-btn:hover {
+    background-color: #000000;
+    color: #ffffff;
+}
+.carrusel {
+    width: min(100%, calc(4 * 300px + 3 * 1.5rem));
+    display: flex;
+    gap: 1.5rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    padding: 0.3rem;
+}
+.carrusel::-webkit-scrollbar {
+    display: none;
+}
+.tarjeta {
+    flex: 0 0 auto;
+    width: 300px;
+    scroll-snap-align: start;
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+}
+.tarjeta-img {
+    width: 100%;
+    height: 340px;
+    object-fit: contain;
+    padding: 1rem;
+}
+.tarjeta-info {
+    padding: 1rem;
+    border-top: 1px solid #e0e0e0;
+}
+.tarjeta-info h4 {
+    font-size: 0.95rem;
+    font-weight: normal;
+    color: #1a1a1a;
+    line-height: 1.3;
+    margin-bottom: 0.5rem;
+}
+.tarjeta-info p {
+    color: #666666;
+    font-size: 0.85rem;
+    margin-top: 0.2rem;
+}
+.precio {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #1a1a1a !important;
+}
+.rating {
+    color: #1a1a1a !important;
+}
+.agotado {
+    color: #999999 !important;
+    font-style: italic;
+}
+@media (max-width: 600px) {
+    .tarjeta {
+        width: 220px;
+    }
+    .tarjeta-img {
+        height: 260px;
+    }
+    .carrusel-btn {
+        display: none;
+    }
+    .carrusel {
+        width: min(100%, calc(2 * 220px + 1 * 1.5rem));
+    }
+}

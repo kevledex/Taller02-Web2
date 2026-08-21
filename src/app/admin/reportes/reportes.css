@@ -1,0 +1,52 @@
+.admin-container {
+    max-width: 500px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    text-align: center;
+}
+.admin-container h2 {
+    font-size: 2rem;
+    margin-bottom: 1.2rem;
+    color: #1a1a1a;
+}
+.admin-nav {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+.admin-nav a {
+    color: #666666;
+    text-decoration: none;
+    font-size: 0.95rem;
+    padding-bottom: 0.2rem;
+    border-bottom: 2px solid transparent;
+}
+.admin-nav a:hover {
+    color: #1a1a1a;
+}
+.admin-nav a.activo {
+    color: #1a1a1a;
+    border-color: #1a1a1a;
+}
+.lista-reportes {
+    list-style: none;
+    padding: 0;
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    text-align: left;
+}
+.lista-reportes li {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.9rem 1.2rem;
+    border-bottom: 1px solid #e0e0e0;
+    color: #1a1a1a;
+}
+.lista-reportes li:last-child {
+    border-bottom: none;
+}
+.lista-reportes span {
+    color: #666666;
+}

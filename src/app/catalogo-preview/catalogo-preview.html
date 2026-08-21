@@ -1,0 +1,29 @@
+<main class="catalogo-container">
+    <h2>Catálogo</h2>
+    <p class="aviso">Inicia sesión para ver el precio y el stock disponible. <a routerLink="/login">Iniciar Sesión</a></p>
+
+    @for (categoria of categorias(); track categoria) {
+    <section class="categoria-seccion">
+        <h3>{{ traducirCategoria(categoria) }}</h3>
+
+        <div class="carrusel-wrapper">
+            <button class="carrusel-btn" type="button" (click)="desplazar($event, -1)" aria-label="Anterior">‹</button>
+
+            <div class="carrusel">
+                @for (producto of productosPorCategoria(categoria); track producto.id) {
+                <div class="tarjeta">
+                    <img class="tarjeta-img" [src]="producto.image" [alt]="producto.title">
+                    <div class="tarjeta-info">
+                        <h4>{{ producto.title }}</h4>
+                    </div>
+                </div>
+                }
+            </div>
+
+            <button class="carrusel-btn" type="button" (click)="desplazar($event, 1)" aria-label="Siguiente">›</button>
+        </div>
+    </section>
+    } @empty {
+    <p>Cargando catálogo...</p>
+    }
+</main>

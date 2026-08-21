@@ -1,0 +1,14 @@
+<main class="admin-container">
+    <h2>Reportes</h2>
+
+    <nav class="admin-nav">
+        <a routerLink="/admin/productos" routerLinkActive="activo">Productos</a>
+        <a routerLink="/admin/reportes" routerLinkActive="activo">Reportes</a>
+    </nav>
+
+    <ul class="lista-reportes">
+        <li><span>Total de productos</span><strong>{{ totalProductos() }}</strong></li>
+        <li><span>Total en stock</span><strong>{{ totalStock() }}</strong></li>
+        <li><span>Valor del inventario</span><strong>${{ valorInventario() | number: '1.2-2' }}</strong></li>
+    </ul>
+</main>

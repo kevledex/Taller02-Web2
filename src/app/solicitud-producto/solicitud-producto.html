@@ -1,1 +1,29 @@
-<p>solicitud-producto works!</p>
+<div class="solicitud-container">
+    <h2>SOLICITUD DE PRODUCTO</h2>
+
+    <form class="formulario-container" [formGroup]="formularioSolicitud" (ngSubmit)="enviar()">
+        <label>Producto</label>
+        <input formControlName="producto" type="text" required>
+        @if (formularioSolicitud.get('producto')?.invalid && formularioSolicitud.get('producto')?.touched) {
+            <p class="mensaje-error">El producto es obligatorio</p>
+        }
+
+        <label>Cantidad</label>
+        <input formControlName="cantidad" type="number" min="1">
+        @if (formularioSolicitud.get('cantidad')?.invalid && formularioSolicitud.get('cantidad')?.touched) {
+            <p class="mensaje-error">La cantidad debe ser al menos 1</p>
+        }
+
+        <label>Motivo</label>
+        <textarea class="input-descripcion" formControlName="motivo" rows="4"></textarea>
+        @if (formularioSolicitud.get('motivo')?.invalid && formularioSolicitud.get('motivo')?.touched) {
+            <p class="mensaje-error">El motivo debe tener al menos 10 caracteres</p>
+        }
+
+        <button type="submit">Enviar</button>
+
+        @if (enviado()) {
+            <p class="mensaje-exito">Solicitud enviada correctamente</p>
+        }
+    </form>
+</div>

@@ -1,0 +1,35 @@
+<main class="admin-container">
+    <h2>Administrar productos</h2>
+
+    <nav class="admin-nav">
+        <a routerLink="/admin/productos" routerLinkActive="activo">Productos</a>
+        <a routerLink="/admin/reportes" routerLinkActive="activo">Reportes</a>
+    </nav>
+
+    <div class="tabla-scroll">
+        <table class="tabla-admin">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Categoría</th>
+                    <th>Precio</th>
+                    <th>Stock</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (producto of productos(); track producto.id) {
+                <tr>
+                    <td>{{ producto.id }}</td>
+                    <td>{{ producto.title }}</td>
+                    <td>{{ producto.category }}</td>
+                    <td>${{ producto.price }}</td>
+                    <td>{{ producto.rating.count }}</td>
+                </tr>
+                } @empty {
+                <tr><td colspan="5">Cargando productos...</td></tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</main>

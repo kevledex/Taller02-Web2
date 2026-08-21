@@ -1,6 +1,17 @@
 import { inject, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
+const TRADUCCIONES_CATEGORIA: Record<string, string> = {
+  "men's clothing": 'Hombre',
+  "women's clothing": 'Mujer',
+  'jewelery': 'Joyería',
+  'electronics': 'Electrónica'
+};
+
+export function traducirCategoria(categoria: string): string {
+  return TRADUCCIONES_CATEGORIA[categoria] ?? categoria;
+}
+
 @Injectable({
   providedIn: 'root',
 })

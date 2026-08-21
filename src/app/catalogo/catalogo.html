@@ -1,0 +1,35 @@
+<main class="catalogo-container">
+    <h2>Catálogo</h2>
+
+    @for (categoria of categorias(); track categoria) {
+    <section class="categoria-seccion">
+        <h3>{{ traducirCategoria(categoria) }}</h3>
+
+        <div class="carrusel-wrapper">
+            <button class="carrusel-btn" type="button" (click)="desplazar($event, -1)" aria-label="Anterior">‹</button>
+
+            <div class="carrusel">
+                @for (producto of productosPorCategoria(categoria); track producto.id) {
+                <div class="tarjeta">
+                    <img class="tarjeta-img" [src]="producto.image" [alt]="producto.title">
+                    <div class="tarjeta-info">
+                        <h4>{{ producto.title }}</h4>
+                        <p class="precio">${{ producto.price }}</p>
+                        <p class="rating">★ {{ producto.rating.rate }}</p>
+                        @if (producto.rating.count > 0) {
+                        <p>Disponible ({{ producto.rating.count }} en stock)</p>
+                        } @else {
+                        <p class="agotado">Agotado</p>
+                        }
+                    </div>
+                </div>
+                }
+            </div>
+
+            <button class="carrusel-btn" type="button" (click)="desplazar($event, 1)" aria-label="Siguiente">›</button>
+        </div>
+    </section>
+    } @empty {
+    <p>Cargando catálogo...</p>
+    }
+</main>

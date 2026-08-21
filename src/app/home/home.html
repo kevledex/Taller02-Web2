@@ -1,1 +1,50 @@
-<p>home works!</p>
+<section class="hero">
+    <img class="hero-img-bg" src="https://i.postimg.cc/Yq2J5Nq7/Fondo-Home.jpg" alt="Modelos posando">
+    <div class="hero-overlay">
+        <div class="hero-content">
+            <span class="hero-tag">Nueva Temporada</span>
+            <h1>Encuentra tu estilo</h1>
+            <p>Ropa, joyería y electrónica en un solo lugar, a los mejores precios.</p>
+            <a routerLink="/catalogo" class="btn-primary">Ver Catálogo</a>
+        </div>
+    </div>
+</section>
+
+<section class="beneficios-container">
+    <div class="beneficio-card beneficio-amarillo">
+        <p>Devoluciones fáciles</p>
+    </div>
+    <div class="beneficio-card beneficio-celeste">
+        <p>Envío rápido</p>
+    </div>
+    <div class="beneficio-card beneficio-verde">
+        <p>Pago seguro</p>
+    </div>
+    <div class="beneficio-card beneficio-rosa">
+        <p>Atención 24/7</p>
+    </div>
+</section>
+
+<section class="categorias-container">
+    <h2>Categorías</h2>
+    <div class="grid-categorias">
+        @for (categoria of categorias(); track categoria.nombre) {
+        <a routerLink="/catalogo" class="categoria-card">
+            <img class="categoria-img" [src]="categoria.imagen" [alt]="categoria.nombre">
+            <span class="categoria-nombre">{{ categoria.nombre }}</span>
+            <span class="categoria-cantidad">{{ categoria.cantidad }} productos</span>
+        </a>
+        }
+    </div>
+</section>
+
+<main class="modelos-container">
+    <h2>Nuestro Estilo</h2>
+    <div class="grid-modelos">
+        <img class="modelo-img" src="https://i.postimg.cc/NGHpMppM/modelo1.jpg" alt="Modelo hombre">
+        <img class="modelo-img" src="https://i.postimg.cc/nLMSFZXF/modelo5.jpg" alt="Modelo mujer">
+        <img class="modelo-img" src="https://i.postimg.cc/KcMJzJJR/modelo2.jpg" alt="Modelo hombre">
+        <img class="modelo-img" src="https://i.postimg.cc/Hnjb5s1q/modelo7.jpg" alt="Modelo mujer">
+    </div>
+    <a routerLink="/catalogo" class="btn-primary btn-oscuro">Comprar Ahora</a>
+</main>
